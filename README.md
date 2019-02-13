@@ -76,7 +76,7 @@ Example Playbook
 ```yaml
     - hosts: vault-servers
       vars:
-        nginx_sites:
+        nginx_vhosts:
             passbolt:
                 - listen 443 ssl
                 - server_name vault.domain.tld
