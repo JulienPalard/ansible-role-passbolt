@@ -1,0 +1,28 @@
+- name: Install Debian packages
+  package:
+    name:
+      - php7.0-curl
+      - php7.0-intl
+      - php7.0-gd
+      - php7.0-mysql
+      - php7.0-mcrypt
+      - php7.0-dev
+      - php7.0-mbstring
+      - php7.0-fpm
+      - php-gnupg
+      - composer
+      - gnupg
+    state: present
+  when: ansible_os_family == 'Debian'
+  tags:
+    - passbolt
+    - passbolt-package
+
+- name: Install entropy helper if instance is a guest
+  package:
+    name: haveged
+    state: present
+  when: ansible_virtualization_type is defined and ansible_virtualization_type in ["docker", "kvm"]
+  tags:
+    - passbolt-packages
+    - passbolt-gpg

@@ -38,13 +38,13 @@ galaxy_info:
 
 dependencies:
     - role: 'geerlingguy.repo-remi'
-      when: passbolt_install_php
+      when: passbolt_install_php and ansible_os_family == 'RedHat'
 
     - role: 'jdauphant.nginx'
       when: passbolt_install_webserver
 
     - role: 'geerlingguy.php'
-      when: passbolt_install_php
+      when: passbolt_install_php and ansible_os_family == 'RedHat'
 
     - role: 'geerlingguy.mysql'
       when: passbolt_install_dbserver
