@@ -1,14 +1,13 @@
 - name: Install Debian packages
   package:
     name:
-      - php7.0-curl
-      - php7.0-intl
-      - php7.0-gd
-      - php7.0-mysql
-      - php7.0-mcrypt
-      - php7.0-dev
-      - php7.0-mbstring
-      - php7.0-fpm
+      - php7.3-curl
+      - php7.3-intl
+      - php7.3-gd
+      - php7.3-mysql
+      - php7.3-dev
+      - php7.3-mbstring
+      - php7.3-fpm
       - php-gnupg
       - composer
       - gnupg
