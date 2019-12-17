@@ -34,7 +34,7 @@
     - passbolt
     - passbolt-gpg
 
-- shell: gpg --list-keys --fingerprint|egrep -v '(gnupg|uid|pub|sub|\-)'|tr -d '[:space:]'|sed -e 's/^.*\w\=//g'
+- shell: gpg --list-keys --fingerprint|egrep -v '(gnupg|uid|pub|sub|\-)'|head -n 1|tr -d '[:space:]'|sed -e 's/^.*\w\=//g'
   become: yes
   become_user: "{{ passbolt_user }}"
   when: passbolt_gpgkey_admin.rc == 0
